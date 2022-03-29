@@ -1,0 +1,1 @@
+console.log('che il gioco abbia inizio');
