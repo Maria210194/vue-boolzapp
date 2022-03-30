@@ -24,41 +24,103 @@
 <body>
     <div class="container my-3">
 
+        <!--contenitore contatti e actions -->
         <div class="left">
+
             <div class="left-header">
 
-                <div class="userPanel">
-
+                <div class="userPanel bg-beige">
+                    <div class="user-info">
+                        <img class="avatar" src="img/avatar_io.jpg" alt="User">
+                        Mary
+                    </div>
+                    <div class="user-actions">
+                        <i class="fas fa-circle-notch icons-size"></i>
+                        <i class="fas fa-comment-alt icons-size"></i>
+                        <i class="fas fa-ellipsis-v icons-size"></i>
+                    </div>
                 </div>
+
+
                 <div class="dekstopNotifications">
+                    <div class="circle-icon">
+                        <i class="fas fa-bell-slash icons-size"></i>
+                    </div>
+                    <div class="notifications">
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <a href="#">Attiva notifiche dekstop</a>
+                    </div>
+
 
                 </div>
                 <div class="searchBar">
-
+                    <div class="lens-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div>
+                        <input class="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
                 </div>
 
+
             </div>
-            <div class="contacts"></div>
+
+            <!-- contatti -->
+            <div class="contacts">
+                <div class="contact-item">
+                    <div class="user-info">
+                        <img class="avatar" src="img/avatar_1.jpg" alt="User">
+                        <div class="info">
+                            Michele
+                            <p>Ultimo messaggio</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="user-info">
+                        <img class="avatar" src="img/avatar_2.jpg" alt="User">
+                        <div class="info">
+                            Fabio
+                            <p>Ultimo messaggio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-
+        <!--contenitore chat e invio messaggi-->
         <div class="right">
             <div class="right-header">
+                <div class="right-header">
+                    <div class="userPanel bg-beige">
+                        <div class="user-info">
+                            <img class="avatar" src="img/avatar_1.jpg" alt="User">
+                            Michele
+                        </div>
+                        <div class="user-actions">
+                            <i class="fas fa-circle-notch icons-size"></i>
+                            <i class="fas fa-comment-alt icons-size"></i>
+                            <i class="fas fa-ellipsis-v icons-size"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- section chat -->
+            <div class="chat">
 
             </div>
-            <div class="viewMessage">
-
-            </div>
-            <div class="writeMessage">
+            <div class="chat-actions">
+                <i class="fa-regular fa-face-smile"></i>
+                <input type="text" placeholder="Scrivi un messaggio">
+                <i class="fa-solid 2X fa-microphone"></i>
 
             </div>
         </div>
 
-    </div>
 
 
 
-    <script src="js/script.js"></script>
+        <script src="js/script.js"></script>
 </body>
 
 </html>
