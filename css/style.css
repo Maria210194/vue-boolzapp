@@ -28,9 +28,6 @@ body {
     display: flex;
 }
 
-.container > *{
-    border: 1px dashed black;
-}
 
 .left{
     width: 30%;
@@ -50,9 +47,9 @@ body {
     width: 100%;
 }
 
-.right-header{
+.selected-contact{
     width: 100%;
-    border-left: 2px solid #f6f6f6;
+    border-left: 2px solid #ddd;
 }
 
 
@@ -119,7 +116,6 @@ body {
 .notifications a {
     color: #666;
     text-decoration: none;
-
 }
 
 
@@ -160,9 +156,10 @@ body {
 .contacts{
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 .contact-item{
-    padding: 0 10px;
+    padding: 0 5px;
     border-bottom: 2px solid #f6f6f6 ;
 
 }
@@ -180,10 +177,55 @@ body {
 /* chat container */
 
 .chat{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     background-image: url('../img/mine.jpg');
-    height: 600px;
+    padding: 0 50px;
 }
 
+.chat-actions{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    background-color: #f3eeea;
+    font-size: 20px;
+    color: #8294a4;
+    border-left: 2px solid #ddd;
+
+}
+
+
+.chat-actions .write-message{
+    width: 70%;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.message{
+    min-width: 200px;
+    border: 2px solid #666;
+    padding: 5px 10px;
+    margin: 20px 0px;
+    border-radius: 10px;
+    border: none;
+}
+
+.sent{
+    background-color: #d5f9ba;
+    align-self: flex-end;
+
+}
+
+.received{
+    background-color: white;
+    align-self: flex-start;
+
+}
 
 
 

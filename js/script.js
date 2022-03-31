@@ -163,4 +163,29 @@ contacts = [
         ],
     }
 ]
-console.log(contacts)
+
+const app = new Vue({
+    el: '#root',
+    data: {
+        contacts
+    },
+    methods: {
+        getAvatar(valore) {
+            return 'img/avatar' + valore + '.jpg'
+        },
+
+        getLastMessage(contact) {
+            const messages = contact.messages;
+            /*
+            messages.forEach((message, index) => {
+                console.log(contact.name, 'message at', index, 'is', message.message)
+            });
+            */
+
+            const lastMessage = (messages.length > 0) ? messages[messages.length - 1].message : '';
+            console.log(lastMessage);
+
+            return lastMessage;
+        }
+    }
+})
