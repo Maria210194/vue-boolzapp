@@ -172,6 +172,7 @@ body {
 .info p{
     font-size: 11px;
     color: #666;
+    margin: 0;
 }
 
 /* chat container */

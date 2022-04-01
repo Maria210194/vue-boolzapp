@@ -67,11 +67,12 @@
 
             <!-- contatti -->
             <div class="contacts">
-                <div v-for="contact in contacts" class="contact-item">
+                <div v-for="contact in contacts" @click="selectContact(contact)" class="contact-item">
                     <div class="user-info">
                         <img class="avatar" :src="getAvatar(contact.avatar)" :alt="contact.name">
                         <div class="info">
                             {{contact.name}}
+                            <p>{{getLastMessageDate(contact)}}</p>
                             <p>{{getLastMessage(contact)}}</p>
                         </div>
                     </div>
@@ -84,8 +85,9 @@
             <div class="selected-contact">
                 <div class="userPanel bg-beige">
                     <div class="user-info">
-                        <img class="avatar" src="img/avatar_1.jpg" alt="User">
-                        Michele
+                        <img class="avatar" :src="'img/avatar' + selectedContact.avatar + '.jpg'"
+                            :alt="selectedContact.name">
+                        {{selectedContact.name}}
                     </div>
                     <div class="user-actions">
                         <i class="fas fa-circle-notch icons-size"></i>
@@ -96,9 +98,9 @@
             </div>
             <!-- section chat -->
             <div class="chat">
-                <div class="message sent">Portato a spasso il cane?</div>
-                <div class="message sent">Fatto la spesa?</div>
-                <div class="message received">Fatto tutto!</div>
+                <div v-for="item in selectedContact.messages" class="message" :class="item.status ">
+                    {{item.message}}
+                </div>
             </div>
             <div class="chat-actions">
                 <i class="fa-regular fa-face-smile"></i>

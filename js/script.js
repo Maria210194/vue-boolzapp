@@ -167,25 +167,40 @@ contacts = [
 const app = new Vue({
     el: '#root',
     data: {
-        contacts
+        contacts,
+        selectedContact: contacts[0],
     },
     methods: {
         getAvatar(valore) {
             return 'img/avatar' + valore + '.jpg'
         },
 
-        getLastMessage(contact) {
+        getLastMessageElement(contact) {
             const messages = contact.messages;
-            /*
-            messages.forEach((message, index) => {
-                console.log(contact.name, 'message at', index, 'is', message.message)
-            });
-            */
-
-            const lastMessage = (messages.length > 0) ? messages[messages.length - 1].message : '';
-            console.log(lastMessage);
-
+            const lastMessage = (messages.length > 0) ? messages[messages.length - 1] : undefined;
             return lastMessage;
+        },
+
+        getLastMessage(contact) {
+            const message = this.getLastMessageElement(contact);
+
+            const lastMessage = (message) ? message.message : '';
+            return lastMessage;
+        },
+
+        getLastMessageDate(contact) {
+            const lastMessage = this.getLastMessageElement(contact);
+            const date = lastMessage.date;
+            const fullHour = date.split(' ')[1];
+            const temporary = fullHour.split(':');
+            return temporary[0] + ':' + temporary[1];
+        },
+
+        selectContact(contact) {
+            this.selectedContact = contact;
+            console.log(this.selectedContact.name);
+
+
         }
     }
 })
